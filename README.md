@@ -10,18 +10,26 @@ Our enhanced video compression framework called EVC-CR which combine a conventio
 * ffmpeg
 
 ## Experiment process
-The experiment is divided into two processes, conventional encode and overfitted restoration.
+The experiment is divided into two processes, conventional encode and content-fitted restoration.
 ### conventional encode
 We tried five conventional codec, including HM, x264, x265, NVENC, VTM. The conventional encoded bitstream and decoder are in folder data. We can decode these bitstream to get reconstruction data.
-Open folder data and run the command like follow to get reconstructed data.
+
+
+We provide a sequence BQTerrace including the original version and compressed version by HM to verify the effectiveness of our method. You also can use your own data to verify it.
+
+
+
+### Content-fitted restoration neural network
+Testing the content-fitted sequence by the saved checkpoint:
+
 ```
-ffmpeg -i ./HM/PeopleOnStreet_2560x1600_30_QP37.h265 -pix_fmt yuv420p ./HM/PeopleOnStreet_2560x1600_30_QP37_rec.yuv
+python run.py -g 1 evaluate  -m CRNN -b 2 -c 16 -v BQTerrace_1920x1080_60    -q 37 --height 1080 --width 1920 --frame_num 500 --start_frame 0 --codec_mode RA --ckpt ./checkpoints/BQTerrace_1920x1080_60_QP37.pth
 ```
 
-### Overfitted restoration
-Open folder code and run the command like follow to restore reconstruction video.
+You also can encode and train the compressed video with the following command:
+
 ```
-python train.py --lr 0.001 --qp 37 --decay 30 --epoch 70 --frame 150 --batch_size 64 --width_cut 60 --heigh_cut 60 --width 2560 --heigh 1600 --data HM --sequence PeopleOnStreet_2560x1600_30
+python run.py -g 1 train  -m CRNN -b 2 -c 16 -v BQTerrace_1920x1080_60    -q 37 --height 1080 --width 1920 --frame_num 500 --start_frame 0 --neighbor_frames 2 --max_epoch 200 --lr 0.001 --codec_mode RA
 ```
 
 

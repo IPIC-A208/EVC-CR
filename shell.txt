@@ -1,0 +1,184 @@
+python run.py -g 0 evaluate -m BPRNx4 -b 2 -c 16 -v PeopleOnStreet_2560x1600_30_000to099 -q 22 --height 480 --width 832 --no_BN_ru --no_BN_end --no_BN_begin --codec_mode RA --ckpt
+python run.py -g 1 evaluate -m BPRNx4 -b 2 -c 16 -v PeopleOnStreet_2560x1600_30_000to099 -q 27 --height 480 --width 832 --no_BN_ru --no_BN_end --no_BN_begin --codec_mode RA --ckpt
+python run.py -g 2 evaluate -m BPRNx4 -b 2 -c 16 -v PeopleOnStreet_2560x1600_30_000to099 -q 32 --height 480 --width 832 --no_BN_ru --no_BN_end --no_BN_begin --codec_mode RA --ckpt
+python run.py -g 3 evaluate -m BPRNx4 -b 2 -c 16 -v RaceHorses_832x480_30_000to299 -q 37 --height 480 --width 832 --no_BN_ru --no_BN_end --no_BN_begin --codec_mode x264 --ckpt
+
+python run.py -g 0 evaluate -m BPRNx4 -b 2 -c 16 -v BasketballDrill_832x480_50_000to499 -q 37 --height 1080 --width 1920 --no_BN_ru --no_BN_end --no_BN_begin --codec_mode RA --ckpt
+
+################################################
+#########     Class A 2560x1600     ############
+################################################
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v PeopleOnStreet_2560x1600_30_000to099  -q 22 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v PeopleOnStreet_2560x1600_30_000to099  -q 27 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v PeopleOnStreet_2560x1600_30_000to099  -q 32 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v PeopleOnStreet_2560x1600_30_000to099  -q 37 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v PeopleOnStreet_2560x1600_30_000to149  -q 22 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v PeopleOnStreet_2560x1600_30_000to149  -q 27 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v PeopleOnStreet_2560x1600_30_000to149  -q 32 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v PeopleOnStreet_2560x1600_30_000to149  -q 37 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+
+python run.py -g 4 train -m BPRNx4 -b 2 -c 16 -v Traffic_2560x1600_30_000to099         -q 22 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 5 train -m BPRNx4 -b 2 -c 16 -v Traffic_2560x1600_30_000to099         -q 27 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 6 train -m BPRNx4 -b 2 -c 16 -v Traffic_2560x1600_30_000to099         -q 32 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 7 train -m BPRNx4 -b 2 -c 16 -v Traffic_2560x1600_30_000to099         -q 37 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 4 train -m BPRNx4 -b 2 -c 16 -v Traffic_2560x1600_30_000to149         -q 22 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 5 train -m BPRNx4 -b 2 -c 16 -v Traffic_2560x1600_30_000to149         -q 27 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 6 train -m BPRNx4 -b 2 -c 16 -v Traffic_2560x1600_30_000to149         -q 32 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 7 train -m BPRNx4 -b 2 -c 16 -v Traffic_2560x1600_30_000to149         -q 37 --height 1600 --width 2560 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+
+
+################################################
+#########     Class B 1920x1080     ############
+################################################
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to199         -q 22 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to199         -q 27 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to199         -q 32 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to199         -q 37 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to239         -q 22 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to239         -q 27 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to239         -q 32 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to239         -q 37 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v BasketballDrive_1920x1080_50_000to199 -q 22 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v BasketballDrive_1920x1080_50_000to199 -q 27 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v BasketballDrive_1920x1080_50_000to199 -q 32 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v BasketballDrive_1920x1080_50_000to199 -q 37 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+
+python run.py -g 4 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to199       -q 22 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 5 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to199       -q 27 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 6 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to199       -q 32 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 7 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to199       -q 37 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to599       -q 22 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to599       -q 27 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to599       -q 32 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to599       -q 37 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v Cactus_1920x1080_50_000to199          -q 22 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v Cactus_1920x1080_50_000to199          -q 27 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v Cactus_1920x1080_50_000to199          -q 32 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v Cactus_1920x1080_50_000to199          -q 37 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to199       -q 22 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to199       -q 27 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to199       -q 32 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to199       -q 37 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 4 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to239       -q 22 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 5 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to239       -q 27 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 6 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to239       -q 32 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 7 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to239       -q 37 --height 1080 --width 1920 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+#############################################################################################################################################################################################################################
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to199         -q 22 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to199         -q 27 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to199         -q 32 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v Kimono1_1920x1080_24_000to199         -q 37 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v BasketballDrive_1920x1080_50_000to199 -q 22 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v BasketballDrive_1920x1080_50_000to199 -q 27 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v BasketballDrive_1920x1080_50_000to199 -q 32 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v BasketballDrive_1920x1080_50_000to199 -q 37 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to199       -q 22 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to199       -q 27 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to199       -q 32 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v BQTerrace_1920x1080_60_000to199       -q 37 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v Cactus_1920x1080_50_000to199          -q 22 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v Cactus_1920x1080_50_000to199          -q 27 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v Cactus_1920x1080_50_000to199          -q 32 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v Cactus_1920x1080_50_000to199          -q 37 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to199       -q 22 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to199       -q 27 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to199       -q 32 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v ParkScene_1920x1080_24_000to199       -q 37 --height 1080 --width 1920 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+
+
+################################################
+#########     Class C 832x480       ############
+################################################
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v BasketballDrill_832x480_50_000to499   -q 22 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v BasketballDrill_832x480_50_000to499   -q 27 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v BasketballDrill_832x480_50_000to499   -q 32 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v BasketballDrill_832x480_50_000to499   -q 37 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v BQMall_832x480_60_000to599            -q 22 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v BQMall_832x480_60_000to599            -q 27 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v BQMall_832x480_60_000to599            -q 32 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v BQMall_832x480_60_000to599            -q 37 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v PartyScene_832x480_50_000to499        -q 22 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v PartyScene_832x480_50_000to499        -q 27 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v PartyScene_832x480_50_000to499        -q 32 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v PartyScene_832x480_50_000to499        -q 37 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+
+python run.py -g 4 train -m BPRNx4 -b 2 -c 16 -v RaceHorses_832x480_30_000to299        -q 22 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 5 train -m BPRNx4 -b 2 -c 16 -v RaceHorses_832x480_30_000to299        -q 27 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 6 train -m BPRNx4 -b 2 -c 16 -v RaceHorses_832x480_30_000to299        -q 32 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 7 train -m BPRNx4 -b 2 -c 16 -v RaceHorses_832x480_30_000to299        -q 37 --height 480 --width 832 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+#############################################################################################################################################################################################################################
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v BasketballDrill_832x480_50_000to499   -q 22 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v BasketballDrill_832x480_50_000to499   -q 27 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v BasketballDrill_832x480_50_000to499   -q 32 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v BasketballDrill_832x480_50_000to499   -q 37 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v BQMall_832x480_60_000to599            -q 22 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v BQMall_832x480_60_000to599            -q 27 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v BQMall_832x480_60_000to599            -q 32 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v BQMall_832x480_60_000to599            -q 37 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v PartyScene_832x480_50_000to499        -q 22 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v PartyScene_832x480_50_000to499        -q 27 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v PartyScene_832x480_50_000to499        -q 32 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v PartyScene_832x480_50_000to499        -q 37 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v RaceHorses_832x480_30_000to299        -q 22 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v RaceHorses_832x480_30_000to299        -q 27 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v RaceHorses_832x480_30_000to299        -q 32 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v RaceHorses_832x480_30_000to299        -q 37 --height 480 --width 832 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+
+################################################
+#########     Class E 1280x720      ############
+################################################
+python run.py -g 4 train -m BPRNx4 -b 2 -c 16 -v FourPeople_1280x720_60_000to599      -q 22 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 5 train -m BPRNx4 -b 2 -c 16 -v FourPeople_1280x720_60_000to599      -q 27 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 6 train -m BPRNx4 -b 2 -c 16 -v FourPeople_1280x720_60_000to599      -q 32 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 7 train -m BPRNx4 -b 2 -c 16 -v FourPeople_1280x720_60_000to599      -q 37 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v Johnny_1280x720_60_000to599          -q 22 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v Johnny_1280x720_60_000to599          -q 27 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v Johnny_1280x720_60_000to599          -q 32 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v Johnny_1280x720_60_000to599          -q 37 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v KristenAndSara_1280x720_60_000to599  -q 22 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v KristenAndSara_1280x720_60_000to599  -q 27 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v KristenAndSara_1280x720_60_000to599  -q 32 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v KristenAndSara_1280x720_60_000to599  -q 37 --height 720 --width 1280 --max_epoch 1200 --no_BN_ru --no_BN_end --no_BN_begin --lr 0.001 --codec_mode RA
+#############################################################################################################################################################################################################################
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v FourPeople_1280x720_60_000to599      -q 22 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v FourPeople_1280x720_60_000to599      -q 27 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v FourPeople_1280x720_60_000to599      -q 32 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v FourPeople_1280x720_60_000to599      -q 37 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v Johnny_1280x720_60_000to599          -q 22 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v Johnny_1280x720_60_000to599          -q 27 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v Johnny_1280x720_60_000to599          -q 32 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v Johnny_1280x720_60_000to599          -q 37 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+python run.py -g 0 train -m BPRNx4 -b 2 -c 16 -v KristenAndSara_1280x720_60_000to599  -q 22 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 1 train -m BPRNx4 -b 2 -c 16 -v KristenAndSara_1280x720_60_000to599  -q 27 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 2 train -m BPRNx4 -b 2 -c 16 -v KristenAndSara_1280x720_60_000to599  -q 32 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+python run.py -g 3 train -m BPRNx4 -b 2 -c 16 -v KristenAndSara_1280x720_60_000to599  -q 37 --height 720 --width 1280 --patch_mode large --train_batch 1 --max_epoch 1200 --no_BN_begin --no_BN_ru --no_BN_end --lr 0.00001 --codec_mode RA
+
+
+
+
+
+
+
+
+
+
+
+

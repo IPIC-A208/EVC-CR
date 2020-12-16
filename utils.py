@@ -1,9 +1,9 @@
+
+import torch
 import numpy as np
-import cv2
+# import cv2
 import os
 import time
-import pickle
-import random
 
 
 def print_info(info_list):
@@ -34,7 +34,7 @@ def progress_bar(done_num, total_num, length=40):
 def get_time_str():
     return time.strftime("%Y%m%d%H%M%S", time.localtime())
 
-
+#
 # def cv_imread(file_path, channel='BGR'):
 #     """
 #     mode: 'BGR' or 'RGB'
@@ -43,8 +43,8 @@ def get_time_str():
 #     if channel == 'RGB':
 #         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 #     return img
-
-
+#
+#
 # def cv_imwrite(output_path, img, channel='BGR', ext='.png'):
 #     """
 #     image: 8-bit single-channel or 3-channel (with 'BGR' channel order) images
@@ -54,11 +54,11 @@ def get_time_str():
 #     cv2.imencode(ext, img)[1].tofile(output_path)
 
 
-def YUVread(file, size, frame_num=None, start_frame=0, mode='420'):
+def YUVread(path, size, frame_num=None, start_frame=0, mode='420'):
     """
     Only for 4:2:0 and 4:4:4 for now.
 
-    :param file: yuv file
+    :param path: yuv file path
     :param size: [height, width]
     :param frame_num: The number of frames you want to read, and it shouldn't smaller than the frame number of original
         yuv file. Defult is None, means read from start_frame to the end of file.
@@ -74,40 +74,40 @@ def YUVread(file, size, frame_num=None, start_frame=0, mode='420'):
     all_y = np.uint8([])
     all_u = np.uint8([])
     all_v = np.uint8([])
-    # with open(path, 'rb') as file:
-    file.seek(frame_size * start_frame)
-    if frame_num is None:
-        frame_num = 0
-        while True:
-            if mode == '420':
-                y = np.uint8(list(file.read(height * width)))
-                u = np.uint8(list(file.read(height * width >> 2)))
-                v = np.uint8(list(file.read(height * width >> 2)))
-            else:
-                y = np.uint8(list(file.read(height * width)))
-                u = np.uint8(list(file.read(height * width)))
-                v = np.uint8(list(file.read(height * width)))
-            if y.shape == (0,):
-                break
-            all_y = np.concatenate([all_y, y])
-            all_u = np.concatenate([all_u, u])
-            all_v = np.concatenate([all_v, v])
-            frame_num += 1
-    else:
-        for fn in range(frame_num):
-            if mode == '420':
-                y = np.uint8(list(file.read(height * width)))
-                u = np.uint8(list(file.read(height * width >> 2)))
-                v = np.uint8(list(file.read(height * width >> 2)))
-            else:
-                y = np.uint8(list(file.read(height * width)))
-                u = np.uint8(list(file.read(height * width)))
-                v = np.uint8(list(file.read(height * width)))
-            if y.shape == (0,):
-                break
-            all_y = np.concatenate([all_y, y])
-            all_u = np.concatenate([all_u, u])
-            all_v = np.concatenate([all_v, v])
+    with open(path, 'rb') as file:
+        file.seek(frame_size * start_frame)
+        if frame_num is None:
+            frame_num = 0
+            while True:
+                if mode == '420':
+                    y = np.uint8(list(file.read(height * width)))
+                    u = np.uint8(list(file.read(height * width >> 2)))
+                    v = np.uint8(list(file.read(height * width >> 2)))
+                else:
+                    y = np.uint8(list(file.read(height * width)))
+                    u = np.uint8(list(file.read(height * width)))
+                    v = np.uint8(list(file.read(height * width)))
+                if y.shape == (0,):
+                    break
+                all_y = np.concatenate([all_y, y])
+                all_u = np.concatenate([all_u, u])
+                all_v = np.concatenate([all_v, v])
+                frame_num += 1
+        else:
+            for fn in range(frame_num):
+                if mode == '420':
+                    y = np.uint8(list(file.read(height * width)))
+                    u = np.uint8(list(file.read(height * width >> 2)))
+                    v = np.uint8(list(file.read(height * width >> 2)))
+                else:
+                    y = np.uint8(list(file.read(height * width)))
+                    u = np.uint8(list(file.read(height * width)))
+                    v = np.uint8(list(file.read(height * width)))
+                if y.shape == (0,):
+                    break
+                all_y = np.concatenate([all_y, y])
+                all_u = np.concatenate([all_u, u])
+                all_v = np.concatenate([all_v, v])
 
     all_y = np.reshape(all_y, [frame_num, height, width])
     if mode == '420':
@@ -235,49 +235,54 @@ def YUVcut(y, u, v, new_size, new_frame_num=None, start_frame=0, start_point=(0,
 
     return new_y, new_u, new_v
 
-
-# def YUV_change_mode(y, u, v, direction='420to444'):
-#     """
-#     derection: '420to444' or '444to420'
-#     """
-#     if direction == '420to444':
-#         u = np.array([cv2.resize(ch, (u.shape[2] * 2, u.shape[1] * 2), interpolation=cv2.INTER_CUBIC) for ch in u])
-#         v = np.array([cv2.resize(ch, (v.shape[2] * 2, v.shape[1] * 2), interpolation=cv2.INTER_CUBIC) for ch in v])
-#     if direction == '444to420':
-#         u = np.array([cv2.resize(ch, (u.shape[2] // 2, u.shape[1] // 2), interpolation=cv2.INTER_CUBIC) for ch in u])
-#         v = np.array([cv2.resize(ch, (v.shape[2] // 2, v.shape[1] // 2), interpolation=cv2.INTER_CUBIC) for ch in v])
-#     return y, u, v
-
-
-# def save_YUV_img(y, u, v, output_path, mode='420', ext='.png'):
-#     if mode == '420':
-#         y, u, v = YUV_change_mode(y, u, v, '420to444')
-#     if y.shape[0] == 1:
-#         img = cv2.cvtColor(np.concatenate([y[0, :, :, np.newaxis], u[0, :, :, np.newaxis], v[0, :, :, np.newaxis]], 2),
-#                            cv2.COLOR_YUV2BGR)
-#         cv_imwrite(output_path, img, ext=ext)
-#     else:
-#         path = os.path.splitext(output_path)[0]
-#         for fn in range(y.shape[0]):
-#             img = cv2.cvtColor(
-#                 np.concatenate([y[fn, :, :, np.newaxis], u[fn, :, :, np.newaxis], v[fn, :, :, np.newaxis]], 2),
-#                 cv2.COLOR_YUV2BGR)
-#             cv_imwrite(path + '_' + str(fn) + ext, img, ext=ext)
+'''
+def YUV_change_mode(y, u, v, direction='420to444'):
+    """
+    derection: '420to444' or '444to420'
+    """
+    if direction == '420to444':
+        u = np.array([cv2.resize(ch, (u.shape[2] * 2, u.shape[1] * 2), interpolation=cv2.INTER_CUBIC) for ch in u])
+        v = np.array([cv2.resize(ch, (v.shape[2] * 2, v.shape[1] * 2), interpolation=cv2.INTER_CUBIC) for ch in v])
+    if direction == '444to420':
+        u = np.array([cv2.resize(ch, (u.shape[2] // 2, u.shape[1] // 2), interpolation=cv2.INTER_CUBIC) for ch in u])
+        v = np.array([cv2.resize(ch, (v.shape[2] // 2, v.shape[1] // 2), interpolation=cv2.INTER_CUBIC) for ch in v])
+    return y, u, v
 
 
-def calculate_variables(var_list, print_vars=False):
-    all_num = 0
+def save_YUV_img(y, u, v, output_path, mode='420', ext='.png'):
+    if mode == '420':
+        y, u, v = YUV_change_mode(y, u, v, '420to444')
+    if y.shape[0] == 1:
+        img = cv2.cvtColor(np.concatenate([y[0, :, :, np.newaxis], u[0, :, :, np.newaxis], v[0, :, :, np.newaxis]], 2),
+                           cv2.COLOR_YUV2BGR)
+        cv_imwrite(output_path, img, ext=ext)
+    else:
+        path = os.path.splitext(output_path)[0]
+        for fn in range(y.shape[0]):
+            img = cv2.cvtColor(
+                np.concatenate([y[fn, :, :, np.newaxis], u[fn, :, :, np.newaxis], v[fn, :, :, np.newaxis]], 2),
+                cv2.COLOR_YUV2BGR)
+            cv_imwrite(path + '_' + str(fn) + ext, img, ext=ext)
+'''
+
+def calculate_variables(model, print_vars=False):
+    params = list(model.named_parameters())
+    k = 0
     all_size = 0
-    for var in var_list:
-        num = 1
-        for d in var.shape.as_list():
-            num *= d
-        all_num += num
-        all_size += var.dtype.size * num
+    for parm in params:
+        (name, value) = parm
+        l = 1
+        for j in value.size():
+            l *= j
         if print_vars:
-            print(var.dtype.name, var.dtype.size, var.name, num)
-    print()
-    print('Variables number : %d' % all_num)
+            print("{}：".format(name) + str(list(value.size())) + '    ' + "该层参数和：" + str(l))
+        k = k + l
+        if value.dtype == torch.float32:
+            all_size += (4 * l)
+        elif value.dtype == torch.float64:
+            all_size += (8 * l)
+
+    print("总参数数量和：" + str(k))
     print('Variables  size  : %d B' % (all_size))
     print('Variables  size  : %d b' % (all_size * 8))
     print('Variables  size  : %f KB' % (all_size / 1024))
@@ -286,3 +291,25 @@ def calculate_variables(var_list, print_vars=False):
     print('Variables  size  : %f Mb' % (all_size * 8 / 1024 / 1024))
 
 
+# def transform_ckpt_bit_width(ckpt_path, output_path, bit_width):
+#     dtype_dict = {
+#         '16': torch.float16,
+#         '32': torch.float32
+#     }
+#     dtype = dtype_dict[bit_width]
+#
+#     ckpt_reader = tf.train.load_checkpoint(ckpt_path)
+#     var_shape_dict = ckpt_reader.get_variable_to_shape_map()
+#
+#     graph = tf.Graph()
+#     with graph.as_default():
+#         for name in var_shape_dict:
+#             if name[:len('DRRN')] != 'DRRN': continue
+#             if name.find('Adam') >= 0: continue
+#             tf.Variable(ckpt_reader.get_tensor(name), dtype=dtype, name=name)
+#         init = tf.global_variables_initializer()
+#         saver = tf.train.Saver()
+#
+#     with tf.Session(graph=graph) as sess:
+#         sess.run(init)
+#         saver.save(sess=sess, save_path=output_path, write_meta_graph=False)
