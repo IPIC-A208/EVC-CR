@@ -15,7 +15,7 @@ The experiment is divided into two processes, conventional encode and content-fi
 We tried five conventional codec, including HM, x264, x265, NVENC, VTM. The conventional encoded bitstream and decoder are in folder data. We can decode these bitstream to get reconstruction data.
 
 
-We provide a sequence BQTerrace including the original version and compressed version by HM to verify the effectiveness of our method. You also can use your own data to verify it.
+We provide a sequence BQTerrace [google]including the original version and compressed version by HM to verify the effectiveness of our method. You also can use your own data to verify it.
 
 
 
