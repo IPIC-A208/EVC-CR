@@ -39,7 +39,7 @@ We provide a sequence *BQTerrace* including the original version and compressed 
 Testing the content-fitted sequence by the saved checkpoint:
 
 ```
-python run.py -g 1 evaluate  -m CRNN -b 2 -c 16 -v BQTerrace_1920x1080_60 -q 37 --height 1080 --width 1920 --frame_num 500 --start_frame 0 --codec_mode RA --ckpt ./checkpoints/BQTerrace_1920x1080_60_QP37.pth
+python run.py -g 1 evaluate  -m CRNN -b 2 -c 16 -v BQTerrace_1920x1080_60 -q 37 --height 1080 --width 1920 --frame_num 500 --start_frame 0 --codec_mode RA --resume ./checkpoints/BQTerrace_1920x1080_60_QP37.pth
 ```
 
 You also can encode and train the compressed video with the following command:
